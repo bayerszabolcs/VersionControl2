@@ -21,6 +21,7 @@ namespace UserMaintenance
             lblLastName.Text = Resource1.FullName;
             btnAdd.Text = Resource1.Add;
             btnSave.Text = Resource1.Save;
+            btnDel.Text = Resource1.Delete;
 
             listBox1.DataSource = users;
             listBox1.DisplayMember = "FullName";
@@ -55,6 +56,16 @@ namespace UserMaintenance
                 }
                 sw.Close();
             }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            var userID = ((User)(listBox1.SelectedItem)).ID;
+
+            var torlendo = (from u in users
+                            where u.ID == userID
+                            select u).FirstOrDefault();
+            users.Remove(torlendo);
         }
     }
 }

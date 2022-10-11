@@ -34,6 +34,7 @@ namespace UserMaintenance
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -81,11 +82,22 @@ namespace UserMaintenance
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(313, 314);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(130, 50);
+            this.btnDel.TabIndex = 7;
+            this.btnDel.Text = "button1";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.textBox1);
@@ -105,6 +117,7 @@ namespace UserMaintenance
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDel;
     }
 }
 
