@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Ötödikgyakorlat
 {
@@ -19,7 +20,16 @@ namespace Ötödikgyakorlat
         {
             InitializeComponent();
             dataGridView1.DataSource = Rates;
-            
+
+            MnbDataAdd();
+            XMLProcess();
+
+        }
+
+        
+
+        private static void MnbDataAdd()
+        {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
@@ -31,9 +41,11 @@ namespace Ötödikgyakorlat
 
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
-
+        }
+        private void XMLProcess()
+        {
+            
         }
 
-        
     }
 }
