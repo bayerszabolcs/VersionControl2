@@ -1,4 +1,5 @@
-﻿using Ötödikgyakorlat.MnbServiceReference;
+﻿using Ötödikgyakorlat.Entities;
+using Ötödikgyakorlat.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace Ötödikgyakorlat
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.DataSource = Rates;
+            
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
