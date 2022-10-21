@@ -19,16 +19,12 @@ namespace Ötödikgyakorlat
         BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
         {
-            InitializeComponent();
-            dataGridView1.DataSource = Rates;
-
-            
-            XMLProcess(MnbDataAdd());
-            HatodikFeladat();
+            RefreshData();
 
         }
 
        
+
 
         public string MnbDataAdd()
         {
@@ -87,6 +83,30 @@ namespace Ötödikgyakorlat
             chartArea.AxisY.IsStartedFromZero = false;
 
         }
+        private void RefreshData()
+        {
+            Rates.Clear();
+            InitializeComponent();
+            dataGridView1.DataSource = Rates;
 
+            XMLProcess(MnbDataAdd());
+            HatodikFeladat();
+        }
+
+        private void dateTimeStartingDate_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+
+        }
+
+        private void dateTimeEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }
