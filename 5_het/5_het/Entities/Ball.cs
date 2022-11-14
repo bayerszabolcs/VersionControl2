@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _5_het.Entities
 {
-    class Ball : Label
+    public class Ball : Label
     {
         public Ball()
         {
