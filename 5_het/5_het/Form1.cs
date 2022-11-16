@@ -72,6 +72,18 @@ namespace _5_het
             };
         }
 
+        private void btnPresent_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory()
+            {
+                Color1 = btnMainColor.BackColor,
+                Color2 = btnRibbonColor.BackColor,
+
+            };
+
+
+        }
+
         private void btnColorPick_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -91,7 +103,7 @@ namespace _5_het
                 Controls.Remove(_nextToy);
             }
             _nextToy = Factory.CreateNew();
-            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
+            _nextToy.Top = lblNext.Top + lblNext.Height ;
             _nextToy.Left = lblNext.Left;
             Controls.Add(_nextToy);
 
