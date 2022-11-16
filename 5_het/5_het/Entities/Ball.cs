@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace _5_het.Entities
 {
-    public class Ball : Toy
+    public  class Ball : Toy
     {
-        public Ball()
-        {   
+        public SolidBrush BallColor { get; set; }
+        public Ball(Color color)
+        {
+            BallColor = new SolidBrush(color);
             
         }
 
@@ -20,5 +22,7 @@ namespace _5_het.Entities
         {
             g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
         }
+
+
     }
 }
