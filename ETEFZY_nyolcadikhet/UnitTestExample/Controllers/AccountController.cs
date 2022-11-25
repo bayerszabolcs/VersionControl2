@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnitTestExample.Abstractions;
 using UnitTestExample.Entities;
-using UnitTestExample.Services;
+using UnitTestExample.Services; 
 
 namespace UnitTestExample.Controllers
 {
@@ -50,7 +50,10 @@ namespace UnitTestExample.Controllers
 
         public bool ValidatePassword(string password)
         {
-            return true;
+
+            return Regex.IsMatch(
+               password,
+               @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$");
         }
     }
 }
